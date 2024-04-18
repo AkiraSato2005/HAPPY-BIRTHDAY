@@ -1,0 +1,35 @@
+/* style(3).css */
+
+body {
+  position: relative;
+  overflow: hidden; /* Hide overflowing content */
+  background-image: url('chanchan.png'); /* Replace 'kuya chan.jpeg' with the path to your background image */
+  background-size: cover; /* Cover the entire viewport with the background image */
+  background-position: center; /* Center the background image */
+  
+}
+
+ 
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.video-container {
+  width: 200px; /* Adjust the width as needed */
+  height: 200px; /* Adjust the height as needed */
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease; /* Add filter transition */
+  
+}
+.video-container:hover {
+  transform: scale(1.05); /* Scale up slightly on hover */
+  filter: blur(0); /* Remove blur effect on hover */
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEYN PEYG</title>
+  <link rel="stylesheet" href="style(3).css">
+  <style>
+    h1 {
+      text-align: center;
+      color:#f0f0f0;
+    }
+    .container {
+      text-align: center;
+    }
+    .video-container {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-color: #f0f0f0;
+      margin: 10px;
+      text-align: center;
+      line-height: 100px;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+    .message-container {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #f0f0f0;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <h1>CLICK THE CORRESPONDING ICONS FOR A SURPRISE!</h1>
+  <div class="container">
+    <div class="video-container" onclick="openVideoWindow('mama.mp4')">👩</div>
+    <div class="video-container" onclick="openVideoWindow('papa.mp4')">👨</div>
+    <div class="video-container" onclick="openVideoWindow('brothers.mp4')">👨‍👩‍👦‍👦</div>
+    <div class="video-container" onclick="openVideoWindow('lola.mp4')">👵</div>
+    <div class="message-container">
+      <p>Dear Kuya,</p>
+      <p>This is your second brother who is striving to be a programmer someday. Ito ay alay ko sayo, sorry dahil medyo na late alam mo na hehe medyo hindi madali tong gawin ih. But still I'm glad na natapos ko to kahit sa maikling panahon. Through this, I express my genuine care for you ever since then (corny ey jk). I know na we are miles away from each other but I hope through this ma feel mo what I'm trying to express. HAPPY HAPPYYY HAPPYY BORNDAY!!! 😊❤️</p>
+      <p>I hope you are in good health parati, more blessings to come, more bonding to come, be a successful person, always be yourself, love yourself and as your brother I hope that we can be together for a long while with our family. 😊❤️</p>
+      <p>Once again, Happy Birthday Kuya Chan! We love you,</p>
+      <p>Sincerely yours, Darryl</p>
+    </div>
+  </div>
+
+  <script>
+    function openVideoWindow(videoSrc) {
+      const videoWindow = window.open('', '_blank');
+      videoWindow.document.write(`
+        <html>
+        <head>
+          <title>Video Player</title>
+        </head>
+        <body style="margin: 0;">
+          <video src="${videoSrc}" controls autoplay style="width: 100%; height: 100%;"></video>
+        </body>
+        </html>
+      `);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+/* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden; /* Add this line to hide overflowing content */
+}
+
+.question-container {
+  text-align: center;
+  transition: all 0.3s ease-in-out; /* Add transition for smooth size change */
+}
+
+.bigger {
+  transform: scale(1.1); /* Increase size by 10% */
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 24px; /* Set font size for h1 */
+}
+
+button {
+  background-color: #ff6f61;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 18px; /* Set font size for buttons */
+}
+
+button:hover {
+  background-color: #ff3b34;
+}
+
+/* Media queries for responsiveness */
+
+@media only screen and (max-width: 768px) {
+  /* Adjust styles for screens up to 768px width (e.g., iPhone XR) */
+  h1 {
+    font-size: 20px; /* Reduce font size for smaller screens */
+  }
+
+  button {
+    font-size: 16px; /* Reduce font size for smaller screens */
+  }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HELLOOOOO</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container" id="container">
+    <div class="question-container" id="questionContainer">
+      <h1>Are you my older brother? 🤔</h1>
+      <button onclick="showNextQuestion()">Yes</button>
+      <button onclick="showNextQuestion()">No</button>
+    </div>
+  </div>
+
+  <script>
+    let questionIndex = 0;
+    const questions = [
+      "REALLY? 🤨",
+      "REALLLYYYYYYYYY??? 🤔",
+      "hehe, ok HAHAHA 😄",
+      "nope, this isn't the end, keep clicking 🙃",
+      "your almost there, just a little bit moreeee 😅",
+      "are you tired? 😴",
+      "oh you're thinking of pressing the no button arent ya? 🤔",
+      "sadly I removed it Whahaha 😅",
+      "hereee it isss 😁",
+      "here we goooo!! 🚀",
+      "Congratulations, you win Iphone 15 Pro Max, go Claim it here in Oriental Mindoro 📱",
+      "Seryoso na haha 😆",
+      "joke lang pala 🤣",
+      "char ito na talagaaaaa 😜",
+      "BOOMMMM! 💥",
+    ];
+
+    function showNextQuestion() {
+      const questionContainer = document.getElementById('questionContainer');
+      if (questionIndex < questions.length) {
+        const currentQuestion = questions[questionIndex];
+        questionContainer.innerHTML = `
+          <h1>${currentQuestion}</h1>
+          <button onclick="showNextQuestion()">Yes</button>
+          ${questionIndex >= 6 ? '' : '<button onclick="showNextQuestion()">No</button>'}
+        `;
+        questionIndex++;
+        adjustFontSize(questionContainer);
+        moveQuestion(questionContainer);
+      } else {
+        redirectToNextPage();
+      }
+    }
+
+    function adjustFontSize(container) {
+      const h1Element = container.querySelector('h1');
+      const fontSize = parseInt(window.getComputedStyle(h1Element).fontSize);
+      h1Element.style.fontSize = `${fontSize * 1.1}px`; // Increase font size by 10% each time
+    }
+
+    function moveQuestion(container) {
+      const randomX = Math.random() * 100 - 50; // Random translation horizontally within -50px to 50px
+      const randomY = Math.random() * 100 - 50; // Random translation vertically within -50px to 50px
+      container.style.transform = `translate(${randomX}px, ${randomY}px)`;
+    }
+
+    function redirectToNextPage() {
+      setTimeout(() => {
+        window.location.href = 'surprise-page.html'; // Redirect to the surprise page after 3 seconds
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
